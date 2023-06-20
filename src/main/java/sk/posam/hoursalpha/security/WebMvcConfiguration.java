@@ -11,7 +11,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         registry.addMapping("/**")
 //               .allowedOrigins("http://localhost:4200")
                 .allowedOrigins("https://hoursalpha-fe.vercel.app")
-                .allowedMethods("*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
                 .allowCredentials(true);
     }
 }
