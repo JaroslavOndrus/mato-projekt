@@ -46,7 +46,7 @@ public class EmailServiceImpl implements IEmailService {
                 "</body>\n" +
                 "</html>";
 
-        body = body.replace("[[URL]]", "http://localhost:4200" + "/afterVerifyEmail/" + token);
+        body = body.replace("[[URL]]", "https://hoursalpha-fe.vercel.app" + "/afterVerifyEmail/" + token);
 
 
         MimeMessage message = javaMailSender.createMimeMessage();
@@ -83,7 +83,7 @@ public class EmailServiceImpl implements IEmailService {
                     "</body>\n" +
                     "</html>";
 
-            body = body.replace("[[URL]]", "http://localhost:4200" + "/forgotPasswordReset/" + token);
+            body = body.replace("[[URL]]", "https://hoursalpha-fe.vercel.app" + "/forgotPasswordReset/" + token);
 
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -115,7 +115,7 @@ public class EmailServiceImpl implements IEmailService {
                 "</body>\n" +
                 "</html>";
 
-        body = body.replace("[[URL]]", "http://localhost:4200" + "/hoursAlpha");
+        body = body.replace("[[URL]]", "https://hoursalpha-fe.vercel.app" + "/hoursAlpha");
 
         MimeMessage message = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
