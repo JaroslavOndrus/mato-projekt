@@ -203,7 +203,7 @@ public class DayRecordServiceImpl implements IDayRecordService {
         listOfEmployee.forEach(e -> {
             Optional<DayRecord> dayRecord = dayRecordRepository.findByDayRecordByEmployeeAndDate(e, LocalDate.now());
 
-            if (dayRecord.isEmpty()) {
+            if (!dayRecord.isPresent()) {
                 try {
                     emailService.sendNotificationToEmployee(e.getEmail());
                 } catch (MessagingException ex) {
@@ -226,7 +226,7 @@ public class DayRecordServiceImpl implements IDayRecordService {
         listOfEmployee.forEach(e -> {
             Optional<DayRecord> dayRecord = dayRecordRepository.findByDayRecordByEmployeeAndDate(e, LocalDate.now());
 
-            if(dayRecord.isEmpty()){
+            if(!dayRecord.isPresent()){
                 DayRecord defaultDayRecord = new DayRecord(
                         LocalDate.now().getYear(),
                         LocalDate.now().getMonthValue(),
